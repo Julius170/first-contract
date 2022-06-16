@@ -1,4 +1,4 @@
-// SPDX-Lisence-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
 // EVM: Ethereum Virtual Machine
@@ -35,7 +35,7 @@ contract SimpleStorage {
     struct People {
         uint256 favouriteNumber;
         string name;
-    };
+    }
 
 
     
@@ -47,27 +47,27 @@ contract SimpleStorage {
     //     {
     //         favouriteNumber: 2, 
     //         name: "patrick";  
-    //     };
+    //     }
     // );
 
     function store(uint256 _favouriteNumber) public {
         favouriteNumber = _favouriteNumber;
-    };
+    }
 
     // (view, pure) are use to declear functions that do not require computations 
     function retrieve () public view returns (uint256) {
         return favouriteNumber;
-    };
+    }
 
     function addPerson(string memory _name, uint256 _favouriteNumber) public {
-        People memory newPerson = People({favouriteNumber: _favouriteNumber, name: _name})
+        People memory newPerson = People({favouriteNumber: _favouriteNumber, name: _name});
         people.push(newPerson);
         // OR
         // people.push(People(_favouriteNumber, _name));
 
         // Mapping
         nameToFavouriteNumber[_name] = _favouriteNumber;
-    }; 
+    }
     
         // Memory{ EVM Overview (EVM can access and store information in six places) {
             // 1. Stack
@@ -81,6 +81,6 @@ contract SimpleStorage {
 
     // function add() public pure returns (uint256) {
     //     return favouriteNumber;
-    // };
+    // }
     
-};
+}
