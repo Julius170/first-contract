@@ -5,7 +5,7 @@
 // SPDX-Lisence-Identifier: MIT
 
 pragma solidity ^0.8.8;
-import "./PriceConverter.sol"
+import "./PriceConverter.sol";
 
 contract FundMe {
     using PriceConverter for uint256;
@@ -15,7 +15,7 @@ contract FundMe {
     mapping(address => uint256) public addressToAmountFunded;
     
     address public immutable i_owner;
-    consrtuctor() {
+    constructor() {
         i_owner = msg.sender;
     }
     function fund() public payable {
@@ -32,10 +32,10 @@ contract FundMe {
     
     function withdraw () public onlyOwner { 
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
-            address funder = funders[funderIndex]
+            address funder = funders[funderIndex];
         } 
         // reset the array 
-        funders = new address[](0)
+        funders = new address[](0);
         
         
         // withdrawing funds (3 ways);
