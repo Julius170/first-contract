@@ -2,6 +2,6 @@
 
 pragma solidity  ^0.6.0;
 
-contract SafeMathTester.sol {
+contract SafeMathTester {
     uint8 public bugNumber = 255; 
 }
